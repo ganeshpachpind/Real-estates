@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RealEstate</string>
+    <string name="image_desc">Image Description</string>
+    <string name="error">Error loading estate list</string>
 </resources>
