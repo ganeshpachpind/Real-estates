@@ -26,6 +26,7 @@ class EstateViewHolder extends RecyclerView.ViewHolder {
         if (images != null) {
             ImagesAdapter imagesAdapter = new ImagesAdapter(estateRowBinding.getRoot().getContext(), images);
             estateRowBinding.images.setAdapter(imagesAdapter);
+            estateRowBinding.indicator.setViewPager(estateRowBinding.images);
         }
         estateRowBinding.executePendingBindings();
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -22,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />
 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -31,6 +33,14 @@
                 android:text="@{Integer.toString(estateViewModel.estate.price) + ' '+'\u20ac'}"
                 android:textStyle="bold" />
 
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                app:ci_drawable="@drawable/blue_radius"
+                app:ci_drawable_unselected="@drawable/white_radius"
+                app:ci_gravity="end" />
         </FrameLayout>
 
 
@@ -44,12 +54,12 @@
             android:textStyle="bold" />
 
         <TextView
-            android:paddingLeft="4dp"
-            android:paddingStart="4dp"
-            android:layout_marginBottom="5dp"
             android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="4dp"
+            android:paddingStart="4dp"
             android:text="@{estateViewModel.estate.location.address}" />
 
     </LinearLayout>
