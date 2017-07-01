@@ -1,13 +1,11 @@
 package scout24.realestate.repositories;
 
 
-import java.util.List;
-
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import scout24.realestate.api.RestAPIFactory;
-import scout24.realestate.model.Estate;
+import scout24.realestate.model.EstateList;
 
 public class RealEstateRepo {
 
@@ -18,7 +16,7 @@ public class RealEstateRepo {
     }
 
 
-    public void getEstates(Observer<List<Estate>> observer) {
+    public void getEstates(Observer<EstateList> observer) {
         restAPIFactory
                 .getPropertyService()
                 .getEstates()

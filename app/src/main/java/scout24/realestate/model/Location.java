@@ -1,10 +1,15 @@
 package scout24.realestate.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Location {
-    private final String address;
-    private final double latitude;
-    private final double longitude;
+    private String address;
+    private double latitude;
+    private double longitude;
+
+    public Location() {
+    }
 
     public Location(String address, double latitude, double longitude) {
         this.address = address;
@@ -22,5 +27,17 @@ public class Location {
 
     public double getLongitude() {
         return longitude;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

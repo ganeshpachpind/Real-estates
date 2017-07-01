@@ -26,6 +26,9 @@ android {
     dataBinding {
         enabled = true
     }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -41,7 +44,7 @@ dependencies {
 
     compile 'io.reactivex:rxandroid:1.2.1'
 
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-jackson:2.3.0'
 
