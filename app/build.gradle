@@ -13,6 +13,7 @@ android {
         exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
     }
+
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
     defaultConfig {
@@ -23,12 +24,15 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     dataBinding {
         enabled = true
     }
+
     lintOptions {
         disable 'InvalidPackage'
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -47,6 +51,8 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-jackson:2.3.0'
+
+    compile 'com.android.support:recyclerview-v7:25.1.1'
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.10.19'
