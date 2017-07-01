@@ -5,9 +5,9 @@ import android.support.v7.widget.RecyclerView;
 
 import scout24.realestate.databinding.AdvertiseRowBinding;
 
-public class AdvertisementViewHolder extends RecyclerView.ViewHolder {
+class AdvertisementViewHolder extends RecyclerView.ViewHolder {
 
-    public AdvertisementViewHolder(AdvertiseRowBinding advertiseRowBinding) {
+    AdvertisementViewHolder(AdvertiseRowBinding advertiseRowBinding) {
         super(advertiseRowBinding.getRoot());
     }
 }

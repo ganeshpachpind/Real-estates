@@ -34,5 +34,7 @@ public class EstateActivityViewModel implements Observer<EstateList> {
     @Override
     public void onNext(EstateList estateList) {
 
+        estateActivityView.populateEstateList(estateList.getEstates());
+
     }
 }

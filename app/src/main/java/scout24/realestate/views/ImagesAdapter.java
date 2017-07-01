@@ -19,7 +19,7 @@ import scout24.realestate.R;
 import scout24.realestate.databinding.ImagesRowBinding;
 import scout24.realestate.model.Image;
 
-public class ImagesAdapter extends PagerAdapter {
+class ImagesAdapter extends PagerAdapter {
 
     private final LayoutInflater layoutInflater;
     private List<Image> imageList;
@@ -44,6 +44,7 @@ public class ImagesAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         ImagesRowBinding imagesRowBinding = DataBindingUtil.inflate(layoutInflater, R.layout.images_row, container, false);
         SimpleDraweeView imageView = imagesRowBinding.image;
+
         Uri imageUri = Uri.parse(imageList.get(position).getUrl());
         imageView.getHierarchy()
                 .setProgressBarImage(new ProgressBarDrawable());
