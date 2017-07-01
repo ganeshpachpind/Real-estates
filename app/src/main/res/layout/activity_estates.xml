@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <FrameLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -17,5 +17,5 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context="scout24.realestate.views.EstatesActivity" />
-    </LinearLayout>
+    </FrameLayout>
 </layout>
