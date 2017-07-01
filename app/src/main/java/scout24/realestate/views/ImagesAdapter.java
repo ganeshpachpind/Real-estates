@@ -45,8 +45,11 @@ public class ImagesAdapter extends PagerAdapter {
         ImagesRowBinding imagesRowBinding = DataBindingUtil.inflate(layoutInflater, R.layout.images_row, container, false);
         SimpleDraweeView imageView = imagesRowBinding.image;
         Uri imageUri = Uri.parse(imageList.get(position).getUrl());
-        imageView.getHierarchy().setProgressBarImage(new ProgressBarDrawable());
+        imageView.getHierarchy()
+                .setProgressBarImage(new ProgressBarDrawable());
+        imageView.getHierarchy().setPlaceholderImage(R.drawable.placeholder);
         imageView.setImageURI(imageUri);
+
         View rootView = imagesRowBinding.getRoot();
         container.addView(rootView, 0);
         return rootView;
