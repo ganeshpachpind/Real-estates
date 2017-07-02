@@ -19,6 +19,7 @@ import scout24.realestate.views.model.EstateActivityViewModel;
 public class EstatesActivity extends AppCompatActivity implements EstateActivityView {
 
     private ActivityEstatesBinding binding;
+    private EstateActivityViewModel estateActivityViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class EstatesActivity extends AppCompatActivity implements EstateActivity
 
         //TODO - Setup dagger dependency injection
         RealEstateRepo realEstateRepo = new RealEstateRepo(new RestAPIFactory());
-        EstateActivityViewModel estateActivityViewModel = new EstateActivityViewModel(realEstateRepo, this);
+        estateActivityViewModel = new EstateActivityViewModel(realEstateRepo, this);
         estateActivityViewModel.getEstates();
     }
 
@@ -45,5 +46,11 @@ public class EstatesActivity extends AppCompatActivity implements EstateActivity
     public void populateEstateList(List<Estate> estates) {
         binding.estateList.setLayoutManager(new LinearLayoutManager(this));
         binding.estateList.setAdapter(new EstateAdapter(estates));
+    }
+
+    @Override
+    protected void onDestroy() {
+        estateActivityViewModel.onDestroy();
+        super.onDestroy();
     }
 }

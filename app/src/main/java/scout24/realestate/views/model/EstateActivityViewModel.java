@@ -37,4 +37,8 @@ public class EstateActivityViewModel implements Observer<EstateList> {
         estateActivityView.populateEstateList(estateList.getEstates());
 
     }
+
+    public void onDestroy() {
+        realEstateRepo.onDestroy();
+    }
 }
