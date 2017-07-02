@@ -1,4 +1,4 @@
-package scout24.realestate.views;
+package scout24.realestate.views.adapters;
 
 
 import android.content.Context;
@@ -19,12 +19,12 @@ import scout24.realestate.R;
 import scout24.realestate.databinding.ImagesRowBinding;
 import scout24.realestate.model.Image;
 
-class ImagesAdapter extends PagerAdapter {
+public class ImagesAdapter extends PagerAdapter {
 
     private final LayoutInflater layoutInflater;
     private List<Image> imageList;
 
-    ImagesAdapter(Context context, @NonNull List<Image> imageList) {
+    public ImagesAdapter(Context context, @NonNull List<Image> imageList) {
         this.imageList = imageList;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 

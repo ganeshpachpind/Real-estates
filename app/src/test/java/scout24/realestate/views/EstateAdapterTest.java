@@ -12,6 +12,7 @@ import java.util.List;
 import scout24.realestate.model.Estate;
 import scout24.realestate.model.Image;
 import scout24.realestate.model.Location;
+import scout24.realestate.views.adapters.EstateAdapter;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

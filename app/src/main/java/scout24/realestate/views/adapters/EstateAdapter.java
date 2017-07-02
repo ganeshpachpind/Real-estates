@@ -1,4 +1,4 @@
-package scout24.realestate.views;
+package scout24.realestate.views.adapters;
 
 
 import android.databinding.DataBindingUtil;
@@ -15,11 +15,11 @@ import scout24.realestate.model.Estate;
 
 public class EstateAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    public static final int ESTATE_VIEW = 1;
-    public static final int ADVERTISE_VIEW = 0;
+    private static final int ESTATE_VIEW = 1;
+    private static final int ADVERTISE_VIEW = 0;
     private List<Estate> estateList;
 
-    EstateAdapter(List<Estate> estateList) {
+    public EstateAdapter(List<Estate> estateList) {
         this.estateList = estateList;
     }
 
@@ -45,7 +45,7 @@ public class EstateAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         }
     }
 
-    int calculateEstatePositionInList(int position) {
+    public int calculateEstatePositionInList(int position) {
         if (position == 0 || position == 1) return position;
         return position - (position / 3);
     }

@@ -14,6 +14,7 @@ import scout24.realestate.api.RestAPIFactory;
 import scout24.realestate.databinding.ActivityEstatesBinding;
 import scout24.realestate.model.Estate;
 import scout24.realestate.repositories.RealEstateRepo;
+import scout24.realestate.views.adapters.EstateAdapter;
 import scout24.realestate.views.model.EstateActivityViewModel;
 
 public class EstatesActivity extends AppCompatActivity implements EstateActivityView {
