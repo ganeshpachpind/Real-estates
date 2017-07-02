@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:name=".EstateApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.EstatesActivity">
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".views.EstatesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
