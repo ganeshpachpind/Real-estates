@@ -14,7 +14,6 @@ import java.util.List;
 import rx.Observable;
 import rx.observers.TestSubscriber;
 import scout24.realestate.RxBaseTest;
-import scout24.realestate.api.RestAPIFactory;
 import scout24.realestate.model.Estate;
 import scout24.realestate.model.EstateList;
 import scout24.realestate.model.Image;
@@ -26,8 +25,6 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class RealEstateRepoTest extends RxBaseTest {
 
-    @Mock
-    RestAPIFactory restAPIFactory;
     @Mock
     EstateService estateService;
 

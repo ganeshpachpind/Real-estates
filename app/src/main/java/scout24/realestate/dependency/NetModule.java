@@ -9,13 +9,12 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;
-import scout24.realestate.repositories.RealEstateRepo;
-import scout24.realestate.services.EstateService;
 
+@Singleton
 @Module
-public class AppModule {
+public class NetModule {
 
-    private String BASE_URL = "https://private-e618e0-mobiletask2.apiary-mock.com/";
+    private final String BASE_URL = "https://private-e618e0-mobiletask2.apiary-mock.com/";
 
     @Provides
     @Singleton
@@ -30,11 +29,13 @@ public class AppModule {
     }
 
     @Provides
+    @Singleton
     RxJavaCallAdapterFactory rxAapterFactory() {
         return RxJavaCallAdapterFactory.create();
     }
 
     @Provides
+    @Singleton
     JacksonConverterFactory getJackSonFactory() {
         return JacksonConverterFactory.create();
     }
@@ -46,13 +47,4 @@ public class AppModule {
                 .build();
     }
 
-    @Provides
-    EstateService provideEstateService(Retrofit retrofit) {
-        return retrofit.create(EstateService.class);
-    }
-
-    @Provides
-    RealEstateRepo provideRealEsateRepo(EstateService estateService) {
-        return new RealEstateRepo(estateService);
-    }
 }

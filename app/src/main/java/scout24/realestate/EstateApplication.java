@@ -19,9 +19,11 @@ public class EstateApplication extends Application {
         Fresco.initialize(this);
         appComponent = DaggerAppComponent.builder()
                 .build();
+
     }
 
     public AppComponent getAppComponent() {
         return appComponent;
     }
+
 }

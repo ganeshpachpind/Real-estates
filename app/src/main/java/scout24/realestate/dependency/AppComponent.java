@@ -4,10 +4,11 @@ package scout24.realestate.dependency;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import scout24.realestate.views.EstatesActivity;
+import retrofit2.Retrofit;
 
 @Singleton
-@Component(modules = AppModule.class)
+@Component(modules = {NetModule.class})
 public interface AppComponent {
-    void inject(EstatesActivity activity);
+    // downstream dependency
+    Retrofit getRetrofit();
 }
