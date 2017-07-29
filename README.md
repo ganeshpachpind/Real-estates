@@ -12,6 +12,7 @@
 1. Retrofit + RxAndroid  -- For network call
 2. Fresco - For Image caching
 3. MVVM Pattern 
+4. Dagger 2 - Dependency injection [WIP]
 
 # Architecture
 ![alt text](https://raw.githubusercontent.com/ganeshpachpind/VenueReview/master/other/architecture.png)

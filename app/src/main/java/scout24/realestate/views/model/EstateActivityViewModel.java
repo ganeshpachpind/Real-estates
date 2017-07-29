@@ -11,7 +11,8 @@ public class EstateActivityViewModel implements Observer<EstateList> {
     private RealEstateRepo realEstateRepo;
     private EstateActivityView estateActivityView;
 
-    public EstateActivityViewModel(RealEstateRepo realEstateRepo, EstateActivityView estateActivityView) {
+    public EstateActivityViewModel(RealEstateRepo realEstateRepo,
+                                   EstateActivityView estateActivityView) {
         this.realEstateRepo = realEstateRepo;
         this.estateActivityView = estateActivityView;
     }
@@ -33,7 +34,6 @@ public class EstateActivityViewModel implements Observer<EstateList> {
 
     @Override
     public void onNext(EstateList estateList) {
-
         estateActivityView.populateEstateList(estateList.getEstates());
 
     }

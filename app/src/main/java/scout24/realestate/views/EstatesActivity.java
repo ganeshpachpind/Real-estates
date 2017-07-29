@@ -17,6 +17,7 @@ import scout24.realestate.databinding.ActivityEstatesBinding;
 import scout24.realestate.dependency.AppComponent;
 import scout24.realestate.dependency.DaggerEstateComponent;
 import scout24.realestate.dependency.EstateComponent;
+import scout24.realestate.dependency.EstateModule;
 import scout24.realestate.model.Estate;
 import scout24.realestate.repositories.RealEstateRepo;
 import scout24.realestate.views.adapters.EstateAdapter;
@@ -25,27 +26,27 @@ import scout24.realestate.views.model.EstateActivityViewModel;
 public class EstatesActivity extends AppCompatActivity implements EstateActivityView {
 
     private ActivityEstatesBinding binding;
-    private EstateActivityViewModel estateActivityViewModel;
 
     @Inject
     RealEstateRepo realEstateRepo;
+
+    @Inject
+    EstateActivityViewModel estateActivityViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_estates);
 
-
         AppComponent appComponent =
                 ((EstateApplication) getApplication()).getAppComponent();
         EstateComponent estateComponent = DaggerEstateComponent.builder()
+                .estateModule(new EstateModule(this))
                 .appComponent(appComponent)
                 .build();
         estateComponent.inject(this);
 
-        estateActivityViewModel = new EstateActivityViewModel(realEstateRepo, this);
         estateActivityViewModel.getEstates();
-
     }
 
     @Override
