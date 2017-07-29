@@ -9,8 +9,10 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import scout24.realestate.EstateApplication;
 import scout24.realestate.R;
-import scout24.realestate.api.RestAPIFactory;
 import scout24.realestate.databinding.ActivityEstatesBinding;
 import scout24.realestate.model.Estate;
 import scout24.realestate.repositories.RealEstateRepo;
@@ -22,15 +24,18 @@ public class EstatesActivity extends AppCompatActivity implements EstateActivity
     private ActivityEstatesBinding binding;
     private EstateActivityViewModel estateActivityViewModel;
 
+    @Inject
+    RealEstateRepo realEstateRepo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_estates);
+        ((EstateApplication) getApplication()).getAppComponent().inject(this);
 
-        //TODO - Setup dagger dependency injection
-        RealEstateRepo realEstateRepo = new RealEstateRepo(new RestAPIFactory());
         estateActivityViewModel = new EstateActivityViewModel(realEstateRepo, this);
         estateActivityViewModel.getEstates();
+
     }
 
     @Override

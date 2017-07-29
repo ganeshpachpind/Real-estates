@@ -5,22 +5,20 @@ import rx.Observer;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-import scout24.realestate.api.RestAPIFactory;
 import scout24.realestate.model.EstateList;
+import scout24.realestate.services.EstateService;
 
 public class RealEstateRepo {
 
-    private RestAPIFactory restAPIFactory;
     private Subscription subscription;
+    private EstateService estateService;
 
-    public RealEstateRepo(RestAPIFactory restAPIFactory) {
-        this.restAPIFactory = restAPIFactory;
+    public RealEstateRepo(EstateService estateService) {
+        this.estateService = estateService;
     }
 
-
     public void getEstates(Observer<EstateList> observer) {
-        subscription = restAPIFactory
-                .getPropertyService()
+        subscription = estateService
                 .getEstates()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -37,8 +37,7 @@ public class RealEstateRepoTest extends RxBaseTest {
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        realEstateRepo = new RealEstateRepo(restAPIFactory);
-        when(restAPIFactory.getPropertyService()).thenReturn(estateService);
+        realEstateRepo = new RealEstateRepo(estateService);
 
         List<Image> images = Arrays.asList(
                 new Image(1, "dummyurl"),
